@@ -16,16 +16,9 @@ sudo pip3 install meson mako jinja2 ply pyyaml dataclasses
 3. Initialize repo:
 
 ```
-repo init -u https://android.googlesource.com/platform/manifest -b android-13.0.0_r67
-curl --create-dirs -L -o .repo/local_manifests/manifest_brcm_rpi4.xml -O -L https://raw.githubusercontent.com/raspberry-vanilla/android_local_manifest/android-13.0/manifest_brcm_rpi4.xml
-```
-
-Or optionally, you can reduce download size by creating a shallow clone and removing unneeded projects:
-
-```
 repo init -u https://android.googlesource.com/platform/manifest -b android-13.0.0_r67 --depth=1
-curl --create-dirs -L -o .repo/local_manifests/manifest_brcm_rpi4.xml -O -L https://raw.githubusercontent.com/raspberry-vanilla/android_local_manifest/android-13.0/manifest_brcm_rpi4.xml
-curl --create-dirs -L -o .repo/local_manifests/remove_projects.xml -O -L https://raw.githubusercontent.com/raspberry-vanilla/android_local_manifest/android-13.0/remove_projects.xml
+curl --create-dirs -L -o .repo/local_manifests/manifest_brcm_rpi4.xml -O -L https://raw.githubusercontent.com/SpyroSoft-Synergy/roscar_local_manifest/blob/android-13.0/manifest_brcm_rpi4.xml
+curl --create-dirs -L -o .repo/local_manifests/remove_projects.xml -O -L https://raw.githubusercontent.com/SpyroSoft-Synergy/roscar_local_manifest/blob/android-13.0/remove_projects.xml
 ```
 
 4. Sync source code:
@@ -41,18 +34,6 @@ repo sync
 ```
 
 6. Select build target:
-
-Tablet UI:
-```
-lunch aosp_rpi4-userdebug
-```
-
-Android TV:
-```
-lunch aosp_rpi4_tv-userdebug
-```
-
-Android Automotive:
 ```
 lunch aosp_rpi4_car-userdebug
 ```
