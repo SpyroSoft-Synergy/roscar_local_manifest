@@ -27,29 +27,20 @@ curl --create-dirs -L -o .repo/local_manifests/remove_projects.xml -O -L https:/
 repo sync
 ```
 
-5. Setup Android build environment:
+5. Build the AOSP image:
 
 ```
-. build/envsetup.sh
+./make_libmicroros.sh
+```
+```
+./make_aosp_img.sh
 ```
 
-6. Select build target:
-```
-lunch aosp_rpi4_car-userdebug
-```
-
-7. Compile:
-```
-make bootimage systemimage vendorimage -j$(nproc)
-```
-
-8. Make flashable image:
+6. Make flashable image:
 
 ```
 ./rpi4-mkimg.sh
 ```
-
-Also look into [Linux kernel build instructions](https://github.com/raspberry-vanilla/android_kernel_manifest/tree/android-13.0).
 
 ***
 
